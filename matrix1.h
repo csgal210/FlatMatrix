@@ -6,8 +6,8 @@
 // the second matrix.
 
 
-#ifndef P1MATRIX_MATRIX1_H
-#define P1MATRIX_MATRIX1_H
+#ifndef P1_MATRIX1_H
+#define P1_MATRIX1_H
 
 #include <iostream>
 #include <vector>
@@ -22,12 +22,9 @@ private:
 
 public:
     // Constructor
-    Matrix1(size_t rows, size_t cols, const T& initial_val = T())
-        : m_rows(rows), m_cols(cols), m_data(rows * cols, initial_val) {
-        if (rows == 0 || cols == 0) {
-            throw std::invalid_argument("Matrix dimensions must be greater than zero.");
-        }
-    }
+    // TODO: Constructor with third optional parameter.
+    //       Use an initialization list.
+    Matrix1
 
     // Getters
     size_t rows() const { return m_rows; }
@@ -71,7 +68,7 @@ public:
 
         Matrix1<T> result(m_rows, other.m_cols, T(0));
 
-        // Cache-friendly loop order (i, k, j) to optimize data locality
+        // TODO: Analyze Cache-friendly loop order (i, k, j) to optimize data locality
         for (size_t i = 0; i < m_rows; ++i) {
             for (size_t k = 0; k < m_cols; ++k) {
                 T temp = (*this)(i, k);
@@ -94,6 +91,4 @@ public:
     }
 };
 
-
-
-#endif //P1MATRIX_MATRIX1_H
+#endif //P1_MATRIX1_H

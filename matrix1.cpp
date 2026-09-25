@@ -19,46 +19,22 @@ read-only references (const Matrix<T>&).
 
 int main() {
     try {
-        // Initialize two 2x3 matrices with different initial values
-        Matrix1<double> mat1(2, 3, 1.5);
-        Matrix1<double> mat2(2, 3, 2.0);
+        // TODO: Initialize a 2x3 matrix with different initial values
 
-        // Modify individual elements
-        mat1(0, 1) = 5.5;
-        mat2(1, 2) = 4.0;
 
-        std::cout << "Matrix 1:\n";
-        mat1.print();
+        // TODO: Create a 2x3 matrix: 1,2,3 (row1) and 4,5,6 (row2).
+        Matrix1<int> mat1 ...
 
-        std::cout << "\nMatrix 2:\n";
-        mat2.print();
+        // TODO: Create a second matrix. It may have any values you choose
+        //       and should be configured so that matrix multiplication may
+        //       be performed.
+        Matrix1<int> mat2 ...
 
-        // Perform matrix addition
-        Matrix1<double> mat3 = mat1 + mat2;
+        std::cout << "Matrix A :\n"; mat1.print();
+        std::cout << "\nMatrix B :\n"; mat2.print();
 
-        std::cout << "\nResult of Matrix 1 + Matrix 2:\n";
-        mat3.print();
-
-    } catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << "\n";
-    }
-    try {
-        // Create a 2x3 matrix
-        Matrix1<int> mat1(2, 3);
-        mat1(0,0)=1; mat1(0,1)=2; mat1(0,2)=3;
-        mat1(1,0)=4; mat1(1,1)=5; mat1(1,2)=6;
-
-        // Create a 3x2 matrix
-        Matrix1<int> mat2(3, 2);
-        mat2(0,0)=7;  mat2(0,1)=8;
-        mat2(1,0)=9;  mat2(1,1)=10;
-        mat2(2,0)=11; mat2(2,1)=12;
-
-        std::cout << "Matrix A (2x3):\n"; mat1.print();
-        std::cout << "\nMatrix B (3x2):\n"; mat2.print();
-
-        Matrix1<int> result = mat1 * mat2; // Expecting a 2x2 matrix
-        std::cout << "\nResult of A * B (2x2):\n"; result.print();
+        Matrix1<int> result = mat1 * mat2;
+        std::cout << "\nResult of A * B :\n"; result.print();
 
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << "\n";
